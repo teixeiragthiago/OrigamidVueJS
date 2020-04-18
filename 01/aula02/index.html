@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueJS</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1> {{ titulo }} </h1>
+        <div v-if="comprou" :style="{background: cor}" >
+            <p>{{ conteudo }}</p>
+            <p>{{ lado * lado - lado / 100 }}</p>
+            <p> {{ comprou ? 'Sim, ele comprou' : 'Não, não comprou!' }} </p>
+            <input v-model="cor" type="color" />
+            {{ cor }}
+        </div>
+    </div>
+
+<script>
+
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            titulo: "Curso JavaScript",
+            conteudo: "Este é o conteúdo",
+            lado: 5,
+            comprou: true,
+            cor: "#fffff"
+        }
+    });
+
+</script>
+
+</body>
+</html>
